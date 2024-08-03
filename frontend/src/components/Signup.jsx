@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const Signup = () => {
   const [input, setInput] = useState({
@@ -33,7 +34,13 @@ const Signup = () => {
       }
     } catch (error) {
       console.log(error);
-      toast.error(error.response.data.message);
+      toast.error(
+        error.response
+          ? error.response.data
+            ? error.response.data.message
+            : "Something went wrong"
+          : "Something went wrong"
+      );
     }
   };
   return (

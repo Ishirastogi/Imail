@@ -1,12 +1,14 @@
 import express from "express";
-import { login, logout, register } from "../controllers/user.controller";
-import { createEmail, deleteEmail } from "../controllers/email.controller";
-import isAuthenticated from "../middleware/isAuthenticated";
+import {
+  createEmail,
+  deleteEmail,
+  getAllEmails,
+} from "../controllers/email.controller.js";
+import isAuthenticated from "../middleware/isAuthenticated.js";
 
-const router=express.Router();
- router.route("/create").post(isAuthenticated,createEmail);
- router.route("/:id").delete(isAuthenticated,deleteEmail);
- router.route("/getallemails").get(isAuthenticated,getAllEmailById);
-
+const router = express.Router();
+router.route("/create").post(isAuthenticated, createEmail);
+router.route("/:id").delete(isAuthenticated, deleteEmail);
+router.route("/getallemails").get(isAuthenticated, getAllEmails);
 
 export default router;

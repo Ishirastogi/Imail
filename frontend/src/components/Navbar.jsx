@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import { RxAvatar, RxHamburgerMenu } from "react-icons/rx";
 import { IoIosSearch } from "react-icons/io";
 import { BsQuestionCircle } from "react-icons/bs";
@@ -7,7 +7,7 @@ import { TbGridDots } from "react-icons/tb";
 import { useDispatch, useSelector } from "react-redux";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-
+import { setSearchText } from "../redux/appSlice";
 const Navbar = () => {
   const[text, setText]= useState("")
   const {user}= useSelector(store=>store.app)
