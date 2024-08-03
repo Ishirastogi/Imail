@@ -13,7 +13,7 @@ const appSlice = createSlice({
     setOpen: (state, action) => {
       state.open = action.payload;
     },
-    setAuthorUser: (state, action) => {
+    setAuthUser: (state, action) => {
       state.user = action.payload;
     },
     setEmails: (state, action) => {
